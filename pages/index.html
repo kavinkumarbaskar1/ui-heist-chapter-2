@@ -23,15 +23,24 @@
         <!-- START :: car wrapper -->
         <div class="car-wrapper">
           <img src="https://i.ibb.co/C710J5H/Car-without-bg.png" alt="car" />
+          <!-- START :: game start screen -->
+          <div class="game-start-content">
+            <div class="power-icon-wrapper icon game-icon" id="startBtn">
+              <i class="fa-solid fa-power-off medium-icon"></i>
+            </div>
+            <h2 class="game-start-title">ENGINE ON</h2>
+            <p class="game-start-description">Let the game begins...! Have a safe drive</p>
+          </div>
+          <!-- END :: game end screen  -->
           <!-- START :: car dashboard -->
           <div class="car-dashboard">
             <!-- START :: car steering wheel -->
-            <div class="car-steering-wheel-wrapper">
+            <div class="car-steering-wheel-wrapper game-on-content d-none">
               <img src="../assets/steering-wheel.png" alt="car-steering-wheel" />
             </div>
             <!-- END :: car steering wheel -->
             <!-- START :: dashboard panel -->
-            <div class="dashboard-left-panel">
+            <div class="dashboard-left-panel game-on-content d-none">
               <div class="dashboard-time">08: 30 AM</div>
               <div class="fuel-bar-wrapper">
                 <div class="fuel-number">10</div>
@@ -41,7 +50,7 @@
                 </div>
               </div>
             </div>
-            <div class="dashboad-center-panel">
+            <div class="dashboad-center-panel game-on-content d-none">
               <div class="dashboard-greeting">Good Morning..! Charan & Kavin</div>
               <div class="speedometer">
                 <div class="speed-limit-warning-wrapper">
@@ -56,7 +65,7 @@
                 </div>
               </div>
             </div>
-            <div class="dashboard-temperature-wrapper">
+            <div class="dashboard-temperature-wrapper game-on-content d-none">
               <div class="dashboard-temparature">34 °C</div>
               <div class="dashboard-temperature-text">outside</div>
             </div>
@@ -65,27 +74,30 @@
           <!-- END :: car dashboard -->
 
           <!-- START :: action button -->
-          <div class="action-buttons">
-            <div class="power-icon-wrapper icon bottom-first-tab">
+          <div class="action-buttons game-on-content d-none">
+            <div class="power-icon-wrapper icon bottom-first-tab game-stop-icon" id="stopBtn">
               <i class="fa-solid fa-power-off medium-icon"></i>
             </div>
-            <div class="acceralator-wrapper icon bottom-second-tab">
+            <div class="acceralator-wrapper icon bottom-second-tab" id="acceleratorBtn">
               <img src="../assets/accelerator.png" alt="acceralator" />
             </div>
-            <div class="brake-wrapper icon bottom-second-tab">
+            <div class="brake-wrapper icon bottom-second-tab" id="brakeBtn">
               <img src="../assets/brake.png" alt="brake" />
             </div>
-            <div class="volume-wrapper icon bottom-first-tab">
-              <i class="fa-solid fa-volume-xmark medium-icon"></i>
-              <!-- <i class="fa-solid fa-volume-high"></i> -->
+            <div class="camera-wrapper icon bottom-second-tab" id="cameraBtn">
+              <i class="fa-solid fa-camera-retro medium-icon"></i>
             </div>
-            <div class="fuel-wrapper icon bottom-first-tab">
+            <div class="volume-wrapper icon bottom-first-tab" id="volumeBtn">
+              <i class="fa-solid fa-volume-xmark medium-icon d-none"></i>
+              <i class="fa-solid fa-volume-high medium-icon"></i>
+            </div>
+            <div class="fuel-wrapper icon bottom-first-tab" id="fuelBtn">
               <i class="fa-solid fa-gas-pump medium-icon"></i>
             </div>
-            <div class="left-caret-wrapper icon bottom-second-tab">
+            <div class="left-caret-wrapper icon bottom-second-tab" id="leftBtn">
               <i class="fa-solid fa-caret-left big-icon"></i>
             </div>
-            <div class="right-caret-wrapper icon bottom-second-tab">
+            <div class="right-caret-wrapper icon bottom-second-tab" id="rightBtn">
               <i class="fa-solid fa-caret-right big-icon"></i>
             </div>
           </div>
@@ -96,6 +108,11 @@
       <!-- END :: car background wrapper -->
     </section>
     <!-- END :: car environment wrapper -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="../javascript/index.js"></script>
   </body>
 </html>
