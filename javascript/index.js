@@ -16,9 +16,13 @@ const fuelBar = $("#fuelBar");
 const carSteeringWheel = document.getElementById("carSteeringWheel");
 const carEngineStartAudio = document.getElementById("carEngineStartAudio");
 const carEngineRunningAudio = document.getElementById("carEngineRunningAudio");
-const carEngineGearShitAudio = document.getElementById("carEngineGearShitAudio");
-const carEngineAccelaratingAudio = document.getElementById("carEngineAccelaratingAudio");
-const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio")
+const carEngineGearShitAudio = document.getElementById(
+  "carEngineGearShitAudio"
+);
+const carEngineAccelaratingAudio = document.getElementById(
+  "carEngineAccelaratingAudio"
+);
+const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -45,8 +49,8 @@ const fuelValue = $("#fuel");
 
 //CONSTANTS
 const ONE_MINUTE = 60000;
-const FUEL_RUN_TIME = 1 * 60 * 1000; //5 minutes
-const FUEL_DECREASE_INTERVAL = 1 * 1000; //5 seconds
+const FUEL_RUN_TIME = 5 * 60 * 1000; //5 minutes
+const FUEL_DECREASE_INTERVAL = 5 * 1000; //5 seconds
 
 let stream;
 let keyPressed = "";
