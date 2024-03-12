@@ -6,12 +6,14 @@
       if (!isGameOn) {
         // Add keyPressed == "s" && after completing code
         gameModifier();
+        reduceFuel();
         isGameOn = true;
       }
     },
     e: () => {
       if (isGameOn) {
         gameModifier();
+        clearInterval(timerFn);
         isGameOn = false;
       }
     },
@@ -52,6 +54,9 @@
     b: () => {
       decreaseSpeed();
     },
+    r: () => {
+      refillFuel();
+    }
   };
   
   /**
