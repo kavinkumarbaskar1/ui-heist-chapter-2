@@ -1,28 +1,7 @@
-const video = document.getElementById('video');
-const startStopBtn = document.getElementById('startStopBtn');
-let stream;
-
-startStopBtn.addEventListener('click', function() {
-  if (stream) {
-    // Stop the video stream and update button text
-    stream.getTracks().forEach(track => track.stop());
-    stream = null;
-    startStopBtn.textContent = 'Start Webcam';
-  } else {
-    // Request access to the webcam and update button text
-    navigator.mediaDevices.getUserMedia({ video: true })
-      .then(function(s) {
-        stream = s;
-        video.srcObject = stream;
-        startStopBtn.textContent = 'Stop Webcam';
-      })
-      .catch(function(err) {
-        console.error("An error occurred: ", err);
-      });
-  }
 //LAYOUTS
 const startScreen = $(".game-start-content");
 const gameScreen = $(".game-on-content");
+const video = document.getElementById("back-camera");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -35,6 +14,9 @@ const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");
 const cameraBtn = $("#cameraBtn");
 
+
+
+let stream;
 let keyPressed = "";
 let isGameOn = false;
 let isCameraOn = false;
@@ -64,6 +46,24 @@ const btnActions = {
   c: () => {
     isCameraOn = !isCameraOn;
     cameraBtn.toggleClass("active-icon");
+    if (stream) {
+        // Stop the video stream and update button text
+        stream.getTracks().forEach((track) => track.stop());
+        stream = null;
+        cameraBtn.textContent = "Start Webcam";
+      } else {
+        // Request access to the webcam and update button text
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then(function (s) {
+            stream = s;
+            video.srcObject = stream;
+            cameraBtn.textContent = "Stop Webcam";
+          })
+          .catch(function (err) {
+            console.error("An error occurred: ", err);
+          });
+      }
   },
 };
 
@@ -92,3 +92,7 @@ $(document).on("keyup", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].removeClass("active-icon");
 });
+
+cameraBtn.on("keyup", function () {
+    
+  });
