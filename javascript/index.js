@@ -1,7 +1,7 @@
 //LAYOUTS
 const startScreen = $(".game-start-content");
 const gameScreen = $(".game-on-content");
-const video = document.getElementById("back-camera");
+const video = document.getElementById("backCameraPanel");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -13,8 +13,6 @@ const fuelBtn = $("#fuelBtn");
 const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");
 const cameraBtn = $("#cameraBtn");
-
-
 
 let stream;
 let keyPressed = "";
@@ -47,23 +45,21 @@ const btnActions = {
     isCameraOn = !isCameraOn;
     cameraBtn.toggleClass("active-icon");
     if (stream) {
-        // Stop the video stream and update button text
-        stream.getTracks().forEach((track) => track.stop());
-        stream = null;
-        cameraBtn.textContent = "Start Webcam";
-      } else {
-        // Request access to the webcam and update button text
-        navigator.mediaDevices
-          .getUserMedia({ video: true })
-          .then(function (s) {
-            stream = s;
-            video.srcObject = stream;
-            cameraBtn.textContent = "Stop Webcam";
-          })
-          .catch(function (err) {
-            console.error("An error occurred: ", err);
-          });
-      }
+      // Stop the video stream and update button text
+      stream.getTracks().forEach((track) => track.stop());
+      stream = null;
+    } else {
+      // Request access to the webcam and update button text
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then(function (s) {
+          stream = s;
+          video.srcObject = stream;
+        })
+        .catch(function (err) {
+          console.error("An error occurred: ", err);
+        });
+    }
   },
 };
 
@@ -92,7 +88,3 @@ $(document).on("keyup", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].removeClass("active-icon");
 });
-
-cameraBtn.on("keyup", function () {
-    
-  });

@@ -256,14 +256,16 @@ body {
   border: 10px solid #f9f88d;
 }
 
+/* camera styles */
+
 .back-camera {
   position: absolute;
   top: 5%;
   right: 0;
   left: 0;
-  margin: 0 auto;
-  width: 600px;
-  height: 181px;
-  border: 12px solid black;
-  background: black;
+  margin: auto;
+  width: 36%;
+  height: 19%;
+  border: 12px solid #000;
+  background: #000;
 }
