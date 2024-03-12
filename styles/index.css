@@ -147,25 +147,56 @@ body {
 
 .action-buttons {
   position: absolute;
+  top: 0;
+  bottom: 5%;
+  left: 8%;
+  right: 8%;
 }
 
-.power-icon {
-  font-size: 60px;
-  bottom: 20%;
+.icon {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: #445d66;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #546d79;
 }
 
-.acceralator-wrapper,
-.brake-wrapper,
-.left-right-wrapper {
-  height: 80px;
-  width: 80px;
+.icon img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
 }
 
-.pedal {
-  height: 100%;
-  width: 100%;
+.medium-icon {
+  font-size: 50px;
 }
 
-.fuel {
-  font-size: 60px;
+.big-icon {
+  font-size: 75px;
+}
+
+.bottom-first-tab {
+  bottom: 18.5%;
+}
+
+.bottom-second-tab {
+  bottom: 5%;
+}
+
+.right-caret-wrapper,
+.fuel-wrapper {
+  right: 0;
+}
+
+.left-caret-wrapper,
+.volume-wrapper {
+  right: 9%;
+}
+
+.brake-wrapper {
+  left: 9%;
 }
