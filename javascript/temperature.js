@@ -17,7 +17,7 @@
     } catch (error) {
       console.error("Error:", error);
     }finally{
-      // Schedule the next update after 1 minute (60 seconds)
-      setTimeout(fetchTemperature, ONE_MINUTE);
+      // Schedule the next update after 30 minute * (60 seconds)
+      setTimeout(fetchTemperature, 30 * ONE_MINUTE);
     }
   };

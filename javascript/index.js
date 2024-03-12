@@ -11,6 +11,8 @@ const video = document.getElementById("backCamera");
 const speedWarning = $("#speedWarning");
 const dashboardTime = $("#dashboardTime");
 const dashboardTemperature = $("#dashboardTemrature");
+const greetingMessage = $("#greetingMessage");
+const fuelBar = $("#fuelBar");
 const carSteeringWheel = document.getElementById("carSteeringWheel");
 
 //BUTTONS
@@ -38,6 +40,8 @@ const fuelValue = $("#fuel");
 
 //CONSTANTS
 const ONE_MINUTE = 60000;
+const FUEL_RUN_TIME = 5 * 30 * 1000; //5 minutes
+const FUEL_DECREASE_INTERVAL = 5 * 1000; //5 seconds
 
 let stream;
 let keyPressed = "";
@@ -45,7 +49,9 @@ let isGameOn = false;
 let isCameraOn = false;
 let fuel = 60;
 let speed = 0;
+let carRunTime = 0;
 let decreaseFn;
+let timerFn;
 let currentAngle = 0;
 
 /**
