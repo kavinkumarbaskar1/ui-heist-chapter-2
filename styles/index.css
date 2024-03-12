@@ -1,3 +1,27 @@
-main{
-    color: grey;
+.car-wrapper {
+  height: 100vh;
+  width: 100%;
+}
+
+.car-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
+.power-icon {
+  font-size: 60px;
+}
+
+.acceralator-wrapper,.brake-wrapper,.left-right-wrapper{
+  height: 80px;
+  width: 80px;
+}
+
+.pedal {
+  height: 100%;
+  width: 100%;
+}
+
+.fuel{
+    font-size: 60px;
 }
