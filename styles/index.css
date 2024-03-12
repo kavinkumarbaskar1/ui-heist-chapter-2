@@ -158,6 +158,7 @@ body {
   width: 100px;
   position: absolute;
   background-color: #445d66;
+  color: #bec3c4;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -199,4 +200,58 @@ body {
 
 .brake-wrapper {
   left: 9%;
+}
+
+.camera-wrapper {
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #141a23;
+  background-color: #26a9bb;
+}
+
+/* gaming styles */
+
+.game-icon {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  color: #62b702;
+  background-color: #000;
+  border: 10px solid #62b702;
+}
+
+.game-stop-icon {
+  color: #b94c13;
+  background-color: #000;
+  border: 10px solid #b94c13;
+}
+
+.game-start-content {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.game-start-title {
+  font-size: 36px;
+}
+
+.game-start-description {
+  font-size: 24px;
+}
+
+.d-none {
+  display: none;
+}
+
+.active-icon {
+  border: 10px solid #f9f88d;
 }
