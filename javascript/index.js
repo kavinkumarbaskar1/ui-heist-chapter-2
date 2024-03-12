@@ -11,7 +11,7 @@ const video = document.getElementById("backCamera");
 const speedWarning = $("#speedWarning");
 const dashboardTime = $("#dashboardTime");
 const dashboardTemperature = $("#dashboardTemrature");
-const carSteeringWheel = $("#carSteeringWheel");
+const carSteeringWheel = document.getElementById("carSteeringWheel");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -46,6 +46,7 @@ let isCameraOn = false;
 let fuel = 60;
 let speed = 0;
 let decreaseFn;
+let currentAngle = 0;
 
 /**
  * Function to toggle startscreen and gamescreen
