@@ -3,10 +3,17 @@
  */
 const btnActions = {
   s: () => {
+    if (fuel !== 0 && !engineStart) {
+      engineStart = true;
+      carEngineStartAudio.play();
+      setTimeout(() => {
+        carEngineRunningAudio.play();
+      }, 5000);
+      reduceFuel();
+    }
     if (!isGameOn) {
       // Add keyPressed == "s" && after completing code
       gameModifier();
-      reduceFuel();
       isGameOn = true;
     }
   },
@@ -15,6 +22,9 @@ const btnActions = {
       gameModifier();
       clearInterval(timerFn);
       isGameOn = false;
+      engineStart = false;
+      carEngineStartAudio.currentTime = carEngineStartAudio.duration;
+      carEngineRunningAudio.pause();
     }
   },
   m: () => {
@@ -49,13 +59,21 @@ const btnActions = {
  */
 const btnKeyDownActions = {
   a: () => {
-    if (fuel > 0) {
+    if (fuel > 0 && engineStart) {
       clearInterval(decreaseFn);
       increaseSpeed();
+      if (engineStart) {
+        carEngineAccelaratingAudio.play();
+      }
     }
   },
   b: () => {
     decreaseSpeed();
+    if (speed > 0) {
+      carEngineBrakeAudio.play();
+    }else{
+        carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration 
+    }
   },
   r: () => {
     refillFuel();
@@ -77,6 +95,10 @@ const btnKeyUpActions = {
     decreaseFn = setInterval(() => {
       decreaseSpeed();
     }, 100);
+    carEngineAccelaratingAudio.pause();
+  },
+  b: () => {
+    carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration;
   },
   arrowleft: () => {
     anticlockwiseRotate();
