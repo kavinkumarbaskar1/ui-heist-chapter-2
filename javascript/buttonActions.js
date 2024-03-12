@@ -18,7 +18,9 @@ const btnActions = {
     }
   },
   m: () => {
-    volumeBtn.find("i").toggleClass("d-none");
+    if (isGameOn) {
+      volumeBtn.find("i").toggleClass("d-none");
+    }
   },
   c: () => {
     isCameraOn = !isCameraOn;
@@ -47,9 +49,10 @@ const btnActions = {
  */
 const btnKeyDownActions = {
   a: () => {
-    clearInterval(decreaseFn);
-    increaseSpeed();
-    isDecreasing = false;
+    if (fuel > 0) {
+      clearInterval(decreaseFn);
+      increaseSpeed();
+    }
   },
   b: () => {
     decreaseSpeed();
@@ -70,6 +73,7 @@ const btnKeyDownActions = {
  */
 const btnKeyUpActions = {
   a: () => {
+    clearInterval(decreaseFn);
     decreaseFn = setInterval(() => {
       decreaseSpeed();
     }, 100);
@@ -94,12 +98,12 @@ $(document).on("keypress", function (event) {
 $(document).on("keydown", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].addClass("active-icon");
-  if (btnKeyDownActions[KEY]) btnKeyDownActions[KEY]();
+  if (isGameOn && btnKeyDownActions[KEY]) btnKeyDownActions[KEY]();
 });
 
 //functions to handle keyup events
 $(document).on("keyup", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].removeClass("active-icon");
-  if (btnKeyUpActions[KEY]) btnKeyUpActions[KEY]();
+  if (isGameOn && btnKeyUpActions[KEY]) btnKeyUpActions[KEY]();
 });
