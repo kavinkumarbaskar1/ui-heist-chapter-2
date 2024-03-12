@@ -1,6 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* car styles */
+
 .car-wrapper {
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .car-wrapper img {
@@ -8,22 +22,22 @@
   width: 100%;
 }
 
-.power-icon {
-  font-size: 60px;
-}
+/* dashboard styles */
 
 .car-dashboard {
-  position: relative;
-  top: -36rem;
-  color: white;
+  position: absolute;
+  top: 43%;
+  left: 0;
+  right: 0;
+  color: #fff;
 }
 
 .car-steering-wheel-wrapper {
   position: absolute;
-  top: 6rem;
-  right: 20rem;
-  height: 180px;
-  width: 180px;
+  top: 2rem;
+  right: 20%;
+  height: 240px;
+  width: 240px;
 }
 
 .car-steering-wheel-wrapper img {
@@ -31,14 +45,13 @@
   width: 100%;
 }
 
-.dashboard-right-panel {
+.dashboard-left-panel {
   position: absolute;
-  left: 20rem;
+  left: 17%;
 }
 
 .dashboard-time {
-  margin-top: 10px;
-  margin-bottom: 60px;
+  margin: 10px 0 60px;
 }
 
 .fuel-number {
@@ -48,6 +61,7 @@
 .fuel-unit {
   font-size: 10px;
 }
+
 .fuel-bar-wrapper {
   display: flex;
   align-items: center;
@@ -59,7 +73,7 @@
   width: 5rem;
   background-color: #000;
   border-radius: 50px;
-  border: 1px solid white;
+  border: 1px solid #fff;
 }
 
 .fuel-progress-bar {
@@ -68,21 +82,21 @@
   background-color: rgb(173, 82, 38); /* green #4caf50 red 173 82 38*/
   text-align: center;
   line-height: 32px;
-  color: black;
+  color: #000;
   border-radius: 50px;
 }
 
 .dashboad-center-panel {
   position: absolute;
-  left: 50rem;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .dashboard-greeting {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
 }
 
 .speed-limit-warning-wrapper {
@@ -114,7 +128,7 @@
 
 .dashboard-temperature-wrapper {
   position: absolute;
-  left: 88rem;
+  right: 18%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -129,18 +143,60 @@
   font-size: 10px;
 }
 
-.acceralator-wrapper,
-.brake-wrapper,
-.left-right-wrapper {
-  height: 80px;
-  width: 80px;
+/* button styles */
+
+.action-buttons {
+  position: absolute;
+  top: 0;
+  bottom: 5%;
+  left: 8%;
+  right: 8%;
 }
 
-.pedal {
-  height: 100%;
-  width: 100%;
+.icon {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: #445d66;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #546d79;
 }
 
-.fuel {
-  font-size: 60px;
+.icon img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+
+.medium-icon {
+  font-size: 50px;
+}
+
+.big-icon {
+  font-size: 75px;
+}
+
+.bottom-first-tab {
+  bottom: 18.5%;
+}
+
+.bottom-second-tab {
+  bottom: 5%;
+}
+
+.right-caret-wrapper,
+.fuel-wrapper {
+  right: 0;
+}
+
+.left-caret-wrapper,
+.volume-wrapper {
+  right: 9%;
+}
+
+.brake-wrapper {
+  left: 9%;
 }

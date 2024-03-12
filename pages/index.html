@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>ui-heist-chapter-2</title>
-    <link rel="stylesheet" href="../styles/index.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -13,6 +12,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="../styles/index.css" />
   </head>
   <body>
     <!-- START :: car environment wrapper -->
@@ -27,14 +27,11 @@
           <div class="car-dashboard">
             <!-- START :: car steering wheel -->
             <div class="car-steering-wheel-wrapper">
-              <img
-                src="../assets/steering-wheel.png"
-                alt="card-steering-wheel"
-              />
+              <img src="../assets/steering-wheel.png" alt="car-steering-wheel" />
             </div>
             <!-- END :: car steering wheel -->
-            <!-- START :: dashboard right panel -->
-            <div class="dashboard-right-panel">
+            <!-- START :: dashboard panel -->
+            <div class="dashboard-left-panel">
               <div class="dashboard-time">08: 30 AM</div>
               <div class="fuel-bar-wrapper">
                 <div class="fuel-number">10</div>
@@ -44,11 +41,8 @@
                 </div>
               </div>
             </div>
-            <!-- END :: dashboard right panel -->
             <div class="dashboad-center-panel">
-              <div class="dashboard-greeting">
-                Good Morning..! Charan & Kavin
-              </div>
+              <div class="dashboard-greeting">Good Morning..! Charan & Kavin</div>
               <div class="speedometer">
                 <div class="speed-limit-warning-wrapper">
                   <div class="warning-icon-wrapper">
@@ -63,52 +57,39 @@
               </div>
             </div>
             <div class="dashboard-temperature-wrapper">
-              <div class="dashboard-temparature">
-                34 °C
-              </div>
-              <div class="dashboard-temperature-text">
-                outside
-              </div>
+              <div class="dashboard-temparature">34 °C</div>
+              <div class="dashboard-temperature-text">outside</div>
             </div>
+            <!-- END :: dashboard panel -->
           </div>
           <!-- END :: car dashboard -->
-          <div class="power-icon-wrapper">
-            <i class="fa-solid fa-power-off power-icon"></i>
-          </div>
 
-          <!-- START :: car acceralator wheel -->
-          <div class="acceralator-wrapper">
-            <img
-              src="../assets/accelerator.png"
-              alt="acceralator"
-              class="pedal"
-            />
+          <!-- START :: action button -->
+          <div class="action-buttons">
+            <div class="power-icon-wrapper icon bottom-first-tab">
+              <i class="fa-solid fa-power-off medium-icon"></i>
+            </div>
+            <div class="acceralator-wrapper icon bottom-second-tab">
+              <img src="../assets/accelerator.png" alt="acceralator" />
+            </div>
+            <div class="brake-wrapper icon bottom-second-tab">
+              <img src="../assets/brake.png" alt="brake" />
+            </div>
+            <div class="volume-wrapper icon bottom-first-tab">
+              <i class="fa-solid fa-volume-xmark medium-icon"></i>
+              <!-- <i class="fa-solid fa-volume-high"></i> -->
+            </div>
+            <div class="fuel-wrapper icon bottom-first-tab">
+              <i class="fa-solid fa-gas-pump medium-icon"></i>
+            </div>
+            <div class="left-caret-wrapper icon bottom-second-tab">
+              <i class="fa-solid fa-caret-left big-icon"></i>
+            </div>
+            <div class="right-caret-wrapper icon bottom-second-tab">
+              <i class="fa-solid fa-caret-right big-icon"></i>
+            </div>
           </div>
-          <!-- END :: car acceralator wheel -->
-          <!-- START :: car brake wheel -->
-          <div class="brake-wrapper">
-            <img src="../assets/brake.png" alt="brake" class="pedal" />
-          </div>
-          <!-- END :: car acceralator wheel -->
-          <!-- START :: fuel wrapper -->
-          <div class="fuel-wrapper">
-            <i class="fa-solid fa-gas-pump fuel"></i>
-          </div>
-          <!-- END :: fuel wrapper -->
-          <!-- START :: left right caret -->
-          <div class="left-right-wrapper">
-            <img src="../assets/caret.png" alt="left-caret" class="pedal" />
-          </div>
-          <!-- END :: left right caret -->
-          <!-- START :: left right caret -->
-          <div class="left-right-wrapper">
-            <img
-              src="../assets/right-arrows.png"
-              alt="right-caret"
-              class="pedal"
-            />
-          </div>
-          <!-- END :: left right caret -->
+          <!-- END :: action buttons -->
         </div>
         <!-- END :: car wrapper -->
       </div>
