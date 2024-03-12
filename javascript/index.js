@@ -11,6 +11,7 @@ const video = document.getElementById("backCamera");
 const speedWarning = $("#speedWarning");
 const dashboardTime = $("#dashboardTime");
 const dashboardTemperature = $("#dashboardTemrature");
+const greetingMessage = $("#greetingMessage")
 
 //BUTTONS
 const startBtn = $("#startBtn");
