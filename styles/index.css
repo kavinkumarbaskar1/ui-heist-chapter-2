@@ -96,14 +96,22 @@ body {
 }
 
 .dashboard-greeting {
-  margin: 10px 0 20px;
+  margin: 10px 0 35px;
+  color: #d7d8d6;
+}
+
+.speedometer {
+  position: relative;
+  width: 10%;
 }
 
 .speed-limit-warning-wrapper {
+  position: absolute;
+  top: -18px;
   display: flex;
   align-items: center;
   gap: 5px;
-  color: lightsalmon;
+  color: #c37b32;
 }
 
 .speedometer-number-wrapper {
@@ -113,7 +121,7 @@ body {
 }
 
 .speedometer-number {
-  font-size: 48px;
+  font-size: 72px;
 }
 
 .warning-icon-wrapper {
@@ -256,14 +264,16 @@ body {
   border: 10px solid #f9f88d;
 }
 
+/* camera styles */
+
 .back-camera {
   position: absolute;
   top: 5%;
   right: 0;
   left: 0;
-  margin: 0 auto;
-  width: 600px;
-  height: 181px;
-  border: 12px solid black;
-  background: black;
+  margin: auto;
+  width: 36%;
+  height: 19%;
+  border: 12px solid #000;
+  background: #000;
 }

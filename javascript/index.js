@@ -8,6 +8,7 @@ const gameScreen = $(".game-on-content");
 
 //ELEMENTS
 const video = $("#backCamera");
+const speedWarning = $("#speedWarning");
 const dashboardTime = $("#dashboardTime");
 const dashboardTemperature = $("#dashboardTemrature");
 
@@ -21,6 +22,18 @@ const fuelBtn = $("#fuelBtn");
 const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");
 const cameraBtn = $("#cameraBtn");
+const getButtons = {
+  a: acceleratorBtn,
+  b: brakeBtn,
+  r: fuelBtn,
+  m: volumeBtn,
+  arrowleft: leftBtn,
+  arrowright: rightBtn,
+};
+
+//DYNAMIC VALUES
+const speedValue = $("#speed");
+const fuelValue = $("#fuel");
 
 //CONSTANTS
 const ONE_MINUTE = 60000;
@@ -29,6 +42,9 @@ let stream;
 let keyPressed = "";
 let isGameOn = false;
 let isCameraOn = false;
+let fuel = 60;
+let speed = 0;
+let decreaseFn;
 
 /**
  * Function to toggle startscreen and gamescreen
@@ -36,6 +52,41 @@ let isCameraOn = false;
 const gameModifier = () => {
   startScreen.toggleClass("d-none");
   gameScreen.toggleClass("d-none");
+};
+
+/**
+ * Functions to handle car speed
+ */
+const increaseSpeed = () => {
+  if (speed <= 40) {
+    speed += 1;
+  } else if (speed < 140) {
+    speed += 3;
+  } else if (speed < 280) {
+    speed += 5;
+  } else {
+    speed = 280;
+  }
+  if (speed >= 80) {
+    speedWarning.removeClass("d-none");
+  }
+  speedValue.text(speed);
+};
+
+const decreaseSpeed = () => {
+  if (speed >= 100) {
+    speed -= 5;
+  } else if (speed >= 30) {
+    speed -= 3;
+  } else if (speed > 1) {
+    speed -= 1;
+  } else {
+    speed = 0;
+  }
+  if (speed < 80) {
+    speedWarning.addClass("d-none");
+  }
+  speedValue.text(speed);
 };
 
 /**
@@ -65,7 +116,6 @@ const btnActions = {
       // Stop the video stream and update button text
       stream.getTracks().forEach((track) => track.stop());
       stream = null;
-      cameraBtn.textContent = "Start Webcam";
     } else {
       // Request access to the webcam and update button text
       navigator.mediaDevices
@@ -73,7 +123,6 @@ const btnActions = {
         .then(function (s) {
           stream = s;
           video.srcObject = stream;
-          cameraBtn.textContent = "Stop Webcam";
         })
         .catch(function (err) {
           console.error("An error occurred: ", err);
@@ -82,14 +131,29 @@ const btnActions = {
   },
 };
 
-//constant for getting respective buttons
-const getButtons = {
-  a: acceleratorBtn,
-  b: brakeBtn,
-  r: fuelBtn,
-  m: volumeBtn,
-  arrowleft: leftBtn,
-  arrowright: rightBtn,
+/**
+ * Function to handle button keydown actions
+ */
+const btnKeyDownActions = {
+  a: () => {
+    clearInterval(decreaseFn);
+    increaseSpeed();
+    isDecreasing = false;
+  },
+  b: () => {
+    decreaseSpeed();
+  },
+};
+
+/**
+ * Function to handle button keyup actions
+ */
+const btnKeyUpActions = {
+  a: () => {
+    decreaseFn = setInterval(() => {
+      decreaseSpeed();
+    }, 100);
+  },
 };
 
 //function to handle keypress events
@@ -104,12 +168,14 @@ $(document).on("keypress", function (event) {
 $(document).on("keydown", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].addClass("active-icon");
+  if (btnKeyDownActions[KEY]) btnKeyDownActions[KEY]();
 });
 
 //functions to handle keyup events
 $(document).on("keyup", function (event) {
   const KEY = event.key.toLowerCase();
   if (KEY in getButtons) getButtons[KEY].removeClass("active-icon");
+  if (btnKeyUpActions[KEY]) btnKeyUpActions[KEY]();
 });
 
 /**
@@ -120,7 +186,6 @@ const updateTime = () => {
   const hours = now.getHours() % 12 || 12; // 12-hour format with leading zero
   const minutes = now.getMinutes().toString().padStart(2, "0"); // 2-digit minutes with leading zero
   const period = now.getHours() >= 12 ? "PM" : "AM";
-  console.log("timing...");
   dashboardTime.text(`${hours}:${minutes} ${period}`);
 };
 
@@ -138,7 +203,6 @@ const fetchTemperature = async () => {
     const weatherData = await response.json();
     const tempInKelvin = weatherData.main.temp;
     const tempInCelsius = tempInKelvin - 273.15;
-    const tempInFahrenheit = (tempInCelsius * 9) / 5 + 32;
 
     dashboardTemperature.text(`${tempInCelsius.toFixed(1)} °C`)
   } catch (error) {
