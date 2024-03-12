@@ -14,6 +14,15 @@ const dashboardTemperature = $("#dashboardTemrature");
 const greetingMessage = $("#greetingMessage");
 const fuelBar = $("#fuelBar");
 const carSteeringWheel = document.getElementById("carSteeringWheel");
+const carEngineStartAudio = document.getElementById("carEngineStartAudio");
+const carEngineRunningAudio = document.getElementById("carEngineRunningAudio");
+const carEngineGearShitAudio = document.getElementById(
+  "carEngineGearShitAudio"
+);
+const carEngineAccelaratingAudio = document.getElementById(
+  "carEngineAccelaratingAudio"
+);
+const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -53,6 +62,7 @@ let carRunTime = 0;
 let decreaseFn;
 let timerFn;
 let currentAngle = 0;
+let engineStart = false;
 
 /**
  * Function to toggle startscreen and gamescreen
