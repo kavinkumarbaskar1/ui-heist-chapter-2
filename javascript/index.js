@@ -40,7 +40,7 @@ const fuelValue = $("#fuel");
 
 //CONSTANTS
 const ONE_MINUTE = 60000;
-const FUEL_RUN_TIME = 5 * 30 * 1000; //5 minutes
+const FUEL_RUN_TIME = 5 * 60 * 1000; //5 minutes
 const FUEL_DECREASE_INTERVAL = 5 * 1000; //5 seconds
 
 let stream;

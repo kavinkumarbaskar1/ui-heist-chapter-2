@@ -7,7 +7,7 @@ const reduceFuel = () => {
   timerFn = setInterval(() => {
     carRunTime += FUEL_DECREASE_INTERVAL;
     const progress = (1 - carRunTime / FUEL_RUN_TIME) * 100;
-    fuel = (fuel * progress) / 100;
+    fuel -=1;
     let progressColor;
     if (progress > 60) {
       progressColor = "#4caf50";
