@@ -14,6 +14,7 @@ body {
 .car-wrapper {
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .car-wrapper img {
@@ -21,22 +22,22 @@ body {
   width: 100%;
 }
 
-.power-icon {
-  font-size: 60px;
-}
+/* dashboard styles */
 
 .car-dashboard {
-  position: relative;
-  top: -36rem;
-  color: white;
+  position: absolute;
+  top: 43%;
+  left: 0;
+  right: 0;
+  color: #fff;
 }
 
 .car-steering-wheel-wrapper {
   position: absolute;
-  top: 6rem;
-  right: 20rem;
-  height: 180px;
-  width: 180px;
+  top: 2rem;
+  right: 20%;
+  height: 240px;
+  width: 240px;
 }
 
 .car-steering-wheel-wrapper img {
@@ -44,14 +45,13 @@ body {
   width: 100%;
 }
 
-.dashboard-right-panel {
+.dashboard-left-panel {
   position: absolute;
-  left: 20rem;
+  left: 17%;
 }
 
 .dashboard-time {
-  margin-top: 10px;
-  margin-bottom: 60px;
+  margin: 10px 0 60px;
 }
 
 .fuel-number {
@@ -61,6 +61,7 @@ body {
 .fuel-unit {
   font-size: 10px;
 }
+
 .fuel-bar-wrapper {
   display: flex;
   align-items: center;
@@ -72,7 +73,7 @@ body {
   width: 5rem;
   background-color: #000;
   border-radius: 50px;
-  border: 1px solid white;
+  border: 1px solid #fff;
 }
 
 .fuel-progress-bar {
@@ -81,21 +82,21 @@ body {
   background-color: rgb(173, 82, 38); /* green #4caf50 red 173 82 38*/
   text-align: center;
   line-height: 32px;
-  color: black;
+  color: #000;
   border-radius: 50px;
 }
 
 .dashboad-center-panel {
   position: absolute;
-  left: 50rem;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .dashboard-greeting {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin: 10px 0 20px;
 }
 
 .speed-limit-warning-wrapper {
@@ -127,7 +128,7 @@ body {
 
 .dashboard-temperature-wrapper {
   position: absolute;
-  left: 88rem;
+  right: 18%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -142,20 +143,117 @@ body {
   font-size: 10px;
 }
 
-.acceralator-wrapper,
-.brake-wrapper,
-.left-right-wrapper {
-  height: 80px;
-  width: 80px;
+/* button styles */
+
+.action-buttons {
+  position: absolute;
+  top: 0;
+  bottom: 5%;
+  left: 8%;
+  right: 8%;
 }
 
-.pedal {
-  height: 100%;
-  width: 100%;
+.icon {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-color: #445d66;
+  color: #bec3c4;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #546d79;
 }
 
-.fuel {
-  font-size: 60px;
+.icon img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+
+.medium-icon {
+  font-size: 50px;
+}
+
+.big-icon {
+  font-size: 75px;
+}
+
+.bottom-first-tab {
+  bottom: 18.5%;
+}
+
+.bottom-second-tab {
+  bottom: 5%;
+}
+
+.right-caret-wrapper,
+.fuel-wrapper {
+  right: 0;
+}
+
+.left-caret-wrapper,
+.volume-wrapper {
+  right: 9%;
+}
+
+.brake-wrapper {
+  left: 9%;
+}
+
+.camera-wrapper {
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #141a23;
+  background-color: #26a9bb;
+}
+
+/* gaming styles */
+
+.game-icon {
+  height: 90px;
+  width: 90px;
+  position: relative;
+  color: #62b702;
+  background-color: #000;
+  border: 10px solid #62b702;
+}
+
+.game-stop-icon {
+  color: #b94c13;
+  background-color: #000;
+  border: 10px solid #b94c13;
+}
+
+.game-start-content {
+  position: absolute;
+  top: 44%;
+  left: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.game-start-title {
+  font-size: 36px;
+}
+
+.game-start-description {
+  font-size: 24px;
+}
+
+.d-none {
+  display: none;
+}
+
+.active-icon {
+  border: 10px solid #f9f88d;
 }
 
 .back-camera {
