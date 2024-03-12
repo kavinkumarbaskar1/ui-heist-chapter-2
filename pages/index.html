@@ -41,7 +41,7 @@
             <!-- END :: car steering wheel -->
             <!-- START :: dashboard panel -->
             <div class="dashboard-left-panel game-on-content d-none">
-              <div class="dashboard-time">08: 30 AM</div>
+              <div id="dashboardTime" class="dashboard-time"></div>
               <div class="fuel-bar-wrapper">
                 <div class="fuel-number" id="fuel">60</div>
                 <div class="fuel-unit">Ltrs</div>
@@ -66,7 +66,7 @@
               </div>
             </div>
             <div class="dashboard-temperature-wrapper game-on-content d-none">
-              <div class="dashboard-temparature">34 °C</div>
+              <div id="dashboardTemrature" class="dashboard-temparature">34 °C</div>
               <div class="dashboard-temperature-text">outside</div>
             </div>
             <!-- END :: dashboard panel -->
@@ -109,7 +109,7 @@
     </section>
     <!-- END :: car environment wrapper -->
 
-    <video id="backCameraPanel" class="back-camera" playsinline autoplay muted></video>
+    <video id="backCamera" class="back-camera" playsinline autoplay muted></video>
     <script
       src="https://code.jquery.com/jquery-3.7.1.min.js"
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
