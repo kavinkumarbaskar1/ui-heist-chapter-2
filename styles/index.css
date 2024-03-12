@@ -38,6 +38,7 @@ body {
   right: 20%;
   height: 240px;
   width: 240px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .car-steering-wheel-wrapper img {

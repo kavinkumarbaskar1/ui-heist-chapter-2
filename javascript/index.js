@@ -13,6 +13,7 @@ const dashboardTime = $("#dashboardTime");
 const dashboardTemperature = $("#dashboardTemrature");
 const greetingMessage = $("#greetingMessage");
 const fuelBar = $("#fuelBar");
+const carSteeringWheel = document.getElementById("carSteeringWheel");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -51,6 +52,7 @@ let speed = 0;
 let carRunTime = 0;
 let decreaseFn;
 let timerFn;
+let currentAngle = 0;
 
 /**
  * Function to toggle startscreen and gamescreen
