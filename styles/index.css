@@ -12,7 +12,126 @@
   font-size: 60px;
 }
 
-.acceralator-wrapper,.brake-wrapper,.left-right-wrapper{
+.car-dashboard {
+  position: relative;
+  top: -36rem;
+  color: white;
+}
+
+.car-steering-wheel-wrapper {
+  position: absolute;
+  top: 6rem;
+  right: 20rem;
+  height: 180px;
+  width: 180px;
+}
+
+.car-steering-wheel-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-right-panel {
+  position: absolute;
+  left: 20rem;
+}
+
+.dashboard-time {
+  margin-top: 10px;
+  margin-bottom: 60px;
+}
+
+.fuel-number {
+  font-size: 38px;
+}
+
+.fuel-unit {
+  font-size: 10px;
+}
+.fuel-bar-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fuel-progress-wrapper {
+  margin-top: 10px;
+  width: 5rem;
+  background-color: #000;
+  border-radius: 50px;
+  border: 1px solid white;
+}
+
+.fuel-progress-bar {
+  width: 10%;
+  height: 8px;
+  background-color: rgb(173, 82, 38); /* green #4caf50 red 173 82 38*/
+  text-align: center;
+  line-height: 32px;
+  color: black;
+  border-radius: 50px;
+}
+
+.dashboad-center-panel {
+  position: absolute;
+  left: 50rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-greeting {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.speed-limit-warning-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: lightsalmon;
+}
+
+.speedometer-number-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.speedometer-number {
+  font-size: 48px;
+}
+
+.warning-icon-wrapper {
+  height: 20px;
+  width: 20px;
+}
+
+.warning-icon-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
+.dashboard-temperature-wrapper {
+  position: absolute;
+  left: 88rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard-temparature {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.dashboard-temperature-text {
+  font-size: 10px;
+}
+
+.acceralator-wrapper,
+.brake-wrapper,
+.left-right-wrapper {
   height: 80px;
   width: 80px;
 }
@@ -22,6 +141,6 @@
   width: 100%;
 }
 
-.fuel{
-    font-size: 60px;
+.fuel {
+  font-size: 60px;
 }
