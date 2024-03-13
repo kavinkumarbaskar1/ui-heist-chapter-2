@@ -20,13 +20,14 @@ const carEngineRunningAudio = document.getElementById("carEngineRunningAudio");
 const carEngineGearShitAudio = document.getElementById("carEngineGearShitAudio");
 const carEngineAccelaratingAudio = document.getElementById("carEngineAccelaratingAudio");
 const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
+const carHornAudio = document.getElementById("carHornAudio");
 
 //BUTTONS
 const startBtn = $("#startBtn");
 const stopBtn = $("#stopBtn");
 const acceleratorBtn = $("#acceleratorBtn");
 const brakeBtn = $("#brakeBtn");
-const volumeBtn = $("#volumeBtn");
+const hornBtn = $("#hornBtn");
 const fuelBtn = $("#fuelBtn");
 const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");
@@ -35,7 +36,7 @@ const getButtons = {
   a: acceleratorBtn,
   b: brakeBtn,
   r: fuelBtn,
-  m: volumeBtn,
+  h: hornBtn,
   arrowleft: leftBtn,
   arrowright: rightBtn,
 };
