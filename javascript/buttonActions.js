@@ -6,9 +6,14 @@ const btnActions = {
     if (fuel !== 0 && !engineStart && keyPressed == "s") {
       engineStart = true;
       carEngineStartAudio.play();
-      setTimeout(() => {
-        carEngineRunningAudio.play();
-      }, 5000);
+      // setTimeout(() => {
+      //   carEngineRunningAudio.play();
+      // }, 5000);
+      carEngineStartAudio.addEventListener('ended', function() {
+        if(engineStart){
+          carEngineRunningAudio.play()
+        }
+      });
       reduceFuel();
     }
     if (!isGameOn && keyPressed == "s") {
@@ -18,6 +23,9 @@ const btnActions = {
   },
   e: () => {
     if (isGameOn) {
+      lightBtn.removeClass("active-icon");
+      backgroundFullOverlay.removeClass("d-none");
+      backgroundSideOverlay.addClass("d-none");
       gameModifier();
       clearInterval(timerFn);
       isGameOn = false;
@@ -122,9 +130,11 @@ const btnKeyDownActions = {
     }
   },
   l: () => {
-    lightBtn.toggleClass("active-icon");
-    backgroundFullOverlay.toggleClass("d-none");
-    backgroundSideOverlay.toggleClass("d-none");
+    if(engineStart){
+      lightBtn.toggleClass("active-icon");
+      backgroundFullOverlay.toggleClass("d-none");
+      backgroundSideOverlay.toggleClass("d-none");
+    }
   },
   arrowleft: () => {
     clockwiseRotate();
