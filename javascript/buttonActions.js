@@ -6,9 +6,14 @@ const btnActions = {
     if (fuel !== 0 && !engineStart && keyPressed == "s") {
       engineStart = true;
       carEngineStartAudio.play();
-      setTimeout(() => {
-        carEngineRunningAudio.play();
-      }, 5000);
+      // setTimeout(() => {
+      //   carEngineRunningAudio.play();
+      // }, 5000);
+      carEngineStartAudio.addEventListener('ended', function() {
+        if(engineStart){
+          carEngineRunningAudio.play()
+        }
+      });
       reduceFuel();
     }
     if (!isGameOn && keyPressed == "s") {
@@ -18,6 +23,9 @@ const btnActions = {
   },
   e: () => {
     if (isGameOn) {
+      lightBtn.removeClass("active-icon");
+      backgroundFullOverlay.removeClass("d-none");
+      backgroundSideOverlay.addClass("d-none");
       gameModifier();
       clearInterval(timerFn);
       isGameOn = false;
@@ -48,6 +56,48 @@ const btnActions = {
       }
     }
   },
+  // FM controls
+  f: () => {
+    isMusicIcon = !isMusicIcon;
+    if(isMusicIcon){
+      musicIcon.show();
+      isRadioOn = true;
+      song1.play();
+      song1.addEventListener('ended', function() {
+        if(isRadioOn){
+          song2.play()
+        }
+      });
+      song2.addEventListener('ended', function() {
+        if(isRadioOn){
+          song3.play()
+        }
+      });
+      song3.addEventListener('ended', function() {
+        if(isRadioOn){
+          song4.play()
+        }
+      });
+      song4.addEventListener('ended', function() {
+        if(isRadioOn){
+          song5.play()
+        }
+      });
+      song5.addEventListener('ended', function() {
+        if(isRadioOn){
+          song1.play()
+        }
+      });
+    }else{
+      isRadioOn = false;
+      song1.currentTime = song1.duration;
+      song2.currentTime = song2.duration;
+      song3.currentTime = song3.duration;
+      song4.currentTime = song4.duration;
+      song5.currentTime = song5.duration;
+      musicIcon.hide();
+    }
+  }
 };
 
 /**
@@ -80,9 +130,11 @@ const btnKeyDownActions = {
     }
   },
   l: () => {
-    lightBtn.toggleClass("active-icon");
-    backgroundFullOverlay.toggleClass("d-none");
-    backgroundSideOverlay.toggleClass("d-none");
+    if(engineStart){
+      lightBtn.toggleClass("active-icon");
+      backgroundFullOverlay.toggleClass("d-none");
+      backgroundSideOverlay.toggleClass("d-none");
+    }
   },
   arrowleft: () => {
     clockwiseRotate();

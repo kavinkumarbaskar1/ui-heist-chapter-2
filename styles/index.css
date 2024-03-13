@@ -326,6 +326,27 @@ audio {
   object-fit: inherit;
 }
 
+.radio-wrapper {
+  height: 100px;
+  width: 100px;
+  position: fixed;
+  top: 40rem;
+  left: 52.5rem;
+  background-color: rgba(black, black, black, 0.8);
+}
+
+.music {
+  position: fixed;
+  top: 43rem;
+  left: 55rem;
+  display: none;
+}
+
+.radio-wrapper img {
+  height: 100%;
+  width: 100%;
+}
+
 .dice {
   background-image: url("../assets/dice.png");
   background-size: contain;
