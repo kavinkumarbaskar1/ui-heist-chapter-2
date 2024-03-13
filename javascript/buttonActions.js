@@ -58,7 +58,7 @@ const btnKeyDownActions = {
       clearInterval(decreaseFn);
       increaseSpeed();
       if (engineStart) {
-        carEngineAccelaratingAudio.play();
+        carEngineGearShitAudio.play();
       }
     }
   },
@@ -100,7 +100,7 @@ const btnKeyUpActions = {
         clearInterval(decreaseFn);
       }
     }, 100);
-    carEngineAccelaratingAudio.pause();
+    carEngineGearShitAudio.pause();
   },
   b: () => {
     carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration;
