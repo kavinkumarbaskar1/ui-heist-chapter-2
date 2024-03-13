@@ -7,6 +7,7 @@
 body {
   height: 100vh;
   overflow: hidden;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* car styles */
@@ -52,15 +53,16 @@ body {
 }
 
 .dashboard-time {
-  margin: 10px 0 60px;
+  margin: 10px 20px 40px;
+  font-size: 1.2rem;
 }
 
 .fuel-number {
-  font-size: 38px;
+  font-size: 2.4rem;
 }
 
 .fuel-unit {
-  font-size: 10px;
+  font-size: 0.75rem;
 }
 
 .fuel-bar-wrapper {
@@ -80,7 +82,7 @@ body {
 .fuel-progress-bar {
   width: 100%;
   height: 8px;
-  background-color: #4caf50; 
+  background-color: #4caf50;
   text-align: center;
   line-height: 32px;
   color: #000;
@@ -99,11 +101,12 @@ body {
 .dashboard-greeting {
   margin: 10px 0 35px;
   color: #d7d8d6;
+  font-style: italic;
 }
 
 .speedometer {
   position: relative;
-  width: 10%;
+  width: 12%;
 }
 
 .speed-limit-warning-wrapper {
@@ -122,7 +125,7 @@ body {
 }
 
 .speedometer-number {
-  font-size: 72px;
+  font-size: 4.5rem;
 }
 
 .warning-icon-wrapper {
@@ -222,12 +225,16 @@ body {
 /* gaming styles */
 
 .game-icon {
-  height: 90px;
-  width: 90px;
+  height: 80px;
+  width: 80px;
   position: relative;
   color: #62b702;
   background-color: #000;
   border: 10px solid #62b702;
+}
+
+.game-icon i {
+  font-size: 40px;
 }
 
 .game-stop-icon {
@@ -238,7 +245,7 @@ body {
 
 .game-start-content {
   position: absolute;
-  top: 44%;
+  top: 46%;
   left: 0;
   right: 0;
   display: flex;
@@ -250,11 +257,11 @@ body {
 }
 
 .game-start-title {
-  font-size: 36px;
+  font-size: 24px;
 }
 
 .game-start-description {
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .d-none {
