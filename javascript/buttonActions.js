@@ -28,23 +28,25 @@ const btnActions = {
     }
   },
   c: () => {
-    isCameraOn = !isCameraOn;
-    cameraBtn.toggleClass("active-icon");
-    if (stream) {
-      // Stop the video stream and update button text
-      stream.getTracks().forEach((track) => track.stop());
-      stream = null;
-    } else {
-      // Request access to the webcam and update button text
-      navigator.mediaDevices
-        .getUserMedia({ video: true })
-        .then(function (s) {
-          stream = s;
-          video.srcObject = stream;
-        })
-        .catch(function (err) {
-          console.error("An error occurred: ", err);
-        });
+    if (isGameOn) {
+      isCameraOn = !isCameraOn;
+      cameraBtn.toggleClass("active-icon");
+      if (stream) {
+        // Stop the video stream and update button text
+        stream.getTracks().forEach((track) => track.stop());
+        stream = null;
+      } else {
+        // Request access to the webcam and update button text
+        navigator.mediaDevices
+          .getUserMedia({ video: true })
+          .then(function (s) {
+            stream = s;
+            video.srcObject = stream;
+          })
+          .catch(function (err) {
+            console.error("An error occurred: ", err);
+          });
+      }
     }
   },
 };

@@ -295,4 +295,5 @@ audio {
   height: 19%;
   border: 12px solid #000;
   background: #000;
+  object-fit: inherit;
 }
