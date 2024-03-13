@@ -27,6 +27,7 @@ const videoSpeedHandler = (speed) => {
  */
 const videoPositionHandler = (direction) => {
   const POSITION = parseInt(backgroundVideo.css("left")) || 0;
+  if (speed == 0) return;
   if (direction == "left" && POSITION < -250) {
     backgroundVideo.css("left", `${POSITION + 50}px`);
   } else if (direction == "right" && POSITION > -1250) {
