@@ -311,7 +311,7 @@ audio {
   border: 10px solid #f9f88d;
 }
 
-/* camera styles */
+/* camera area styles */
 
 .back-camera {
   position: absolute;
@@ -324,4 +324,26 @@ audio {
   border: 12px solid #000;
   background: #000;
   object-fit: inherit;
+}
+
+.dice {
+  background-image: url("../assets/dice.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 75px;
+  position: absolute;
+  top: 23.5%;
+  left: 48%;
+}
+
+@keyframes swing {
+  0% {
+    left: 46%;
+    transform: rotate(10deg);
+  }
+  100% {
+    left: 50%;
+    transform: rotate(-10deg);
+  }
 }

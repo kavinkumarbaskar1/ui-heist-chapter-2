@@ -47,6 +47,7 @@ const getButtons = {
 //DYNAMIC VALUES
 const speedValue = $("#speed");
 const fuelValue = $("#fuel");
+const dice = $("#dice");
 
 //CONSTANTS
 const ONE_MINUTE = 60000;
