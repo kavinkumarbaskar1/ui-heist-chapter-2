@@ -34,3 +34,23 @@ const videoPositionHandler = (direction) => {
     backgroundVideo.css("left", `${POSITION - 50}px`);
   }
 };
+
+/**
+ * Function to add overlay
+ */
+const addOverlayOpacity = () => {
+  const now = new Date();
+  const hours = now.getHours();
+  let opacity;
+  if (hours >= 5 && hours < 12) {
+    opacity = 0.3;
+  } else if (hours >= 12 && hours < 18) {
+    opacity = 0.1;
+  } else {
+    opacity = 0.8;
+  }
+  const opacityObject = { background: `rgba(0,0,0,${opacity})` };
+  backgroundFullOverlay.css(opacityObject);
+  backgroundSideOverlay.find("div").css(opacityObject);
+};
+addOverlayOpacity();

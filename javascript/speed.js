@@ -33,7 +33,24 @@ const decreaseSpeed = () => {
   updateSpeed(speed);
 };
 
+const animationSpeed = (speed) => {
+  let animationTime;
+  if (speed == 0) {
+    animationTime = 0;
+  } else if (speed <= 40) {
+    animationTime = 2;
+  } else if (speed <= 120) {
+    animationTime = 1.2;
+  } else if (speed <= 180) {
+    animationTime = 0.8;
+  } else if (speed <= 280) {
+    animationTime = 0.25;
+  }
+  dice.css("animation", `swing ${animationTime}s ease-in-out infinite alternate`);
+};
+
 const updateSpeed = (speed) => {
   speedValue.text(speed);
   videoSpeedHandler(speed);
+  animationSpeed(speed);
 };

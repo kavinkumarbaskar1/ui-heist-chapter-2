@@ -10,6 +10,8 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* background styles */
+
 .bg-video {
   position: absolute;
   top: -300px;
@@ -18,6 +20,31 @@ body {
   width: 200%;
   object-fit: cover;
   z-index: -99;
+}
+
+.bg-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -98;
+}
+
+.left-overlay {
+  position: absolute;
+  left: 0;
+  clip-path: polygon(0 0, 10% 0, 100% 100%, 0 100%);
+  height: 100%;
+  width: 25%;
+  z-index: -98;
+}
+
+.right-overlay {
+  position: absolute;
+  right: 0;
+  clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%);
+  height: 100%;
+  width: 25%;
+  z-index: -98;
 }
 
 /* car styles */
@@ -220,6 +247,7 @@ body {
   right: 9%;
 }
 
+.light-wrapper,
 .brake-wrapper {
   left: 9%;
 }
@@ -283,7 +311,7 @@ audio {
   border: 10px solid #f9f88d;
 }
 
-/* camera styles */
+/* camera area styles */
 
 .back-camera {
   position: absolute;
@@ -317,4 +345,26 @@ audio {
 .radio-wrapper img {
   height: 100%;
   width: 100%;
+}
+
+.dice {
+  background-image: url("../assets/dice.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 75px;
+  position: absolute;
+  top: 23.5%;
+  left: 48%;
+}
+
+@keyframes swing {
+  0% {
+    left: 46%;
+    transform: rotate(10deg);
+  }
+  100% {
+    left: 50%;
+    transform: rotate(-10deg);
+  }
 }
