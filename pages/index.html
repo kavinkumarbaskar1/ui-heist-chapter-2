@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="../styles/index.css" />
   </head>
   <body>
+    <video class="bg-video" id="bgVideo" muted loop>
+      <source src="../assets/road-bg.mp4" type="video/mp4" />
+    </video>
     <!-- START :: car environment wrapper -->
     <section class="car-environment-wrapper">
       <!-- START :: car background wrapper -->
@@ -25,7 +28,7 @@
         <div class="car-background"></div>
         <!-- START :: car wrapper -->
         <div class="car-wrapper">
-          <img src="https://i.ibb.co/C710J5H/Car-without-bg.png" alt="car" />
+          <img src="../assets/Car-without-bg.png" alt="car" />
           <!-- START :: game start screen -->
           <div class="game-start-content">
             <div class="power-icon-wrapper icon game-icon" id="startBtn">
@@ -126,12 +129,13 @@
       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
       crossorigin="anonymous"
     ></script>
-    <script src="../javascript/buttonActions.js"></script>
-    <script src="../javascript/rotateSteering.js"></script>
+    <script src="../javascript/time.js"></script>
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/rotateSteering.js"></script>    
+    <script src="../javascript/video.js"></script>
     <script src="../javascript/speed.js"></script>
     <script src="../javascript/temperature.js"></script>
     <script src="../javascript/fuel.js"></script>
-    <script src="../javascript/time.js"></script>
-    <script src="../javascript/index.js"></script>
+    <script src="../javascript/buttonActions.js"></script>
   </body>
 </html>

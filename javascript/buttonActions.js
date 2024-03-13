@@ -71,8 +71,8 @@ const btnKeyDownActions = {
     decreaseSpeed();
     if (speed > 0) {
       carEngineBrakeAudio.play();
-    }else{
-        carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration 
+    } else {
+      carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration;
     }
   },
   r: () => {
@@ -80,9 +80,11 @@ const btnKeyDownActions = {
   },
   arrowleft: () => {
     clockwiseRotate();
+    videoPositionHandler("left");
   },
   arrowright: () => {
     anticlockwiseRotate();
+    videoPositionHandler("right");
   },
 };
 
@@ -94,6 +96,9 @@ const btnKeyUpActions = {
     clearInterval(decreaseFn);
     decreaseFn = setInterval(() => {
       decreaseSpeed();
+      if (speed == 0) {
+        clearInterval(decreaseFn);
+      }
     }, 100);
     carEngineAccelaratingAudio.pause();
   },

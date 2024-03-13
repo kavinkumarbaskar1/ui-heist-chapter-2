@@ -5,6 +5,7 @@ const CITY = "Chennai";
 //LAYOUTS
 const startScreen = $(".game-start-content");
 const gameScreen = $(".game-on-content");
+const backgroundVideo = $("#bgVideo");
 
 //ELEMENTS
 const video = document.getElementById("backCamera");
@@ -16,12 +17,8 @@ const fuelBar = $("#fuelBar");
 const carSteeringWheel = document.getElementById("carSteeringWheel");
 const carEngineStartAudio = document.getElementById("carEngineStartAudio");
 const carEngineRunningAudio = document.getElementById("carEngineRunningAudio");
-const carEngineGearShitAudio = document.getElementById(
-  "carEngineGearShitAudio"
-);
-const carEngineAccelaratingAudio = document.getElementById(
-  "carEngineAccelaratingAudio"
-);
+const carEngineGearShitAudio = document.getElementById("carEngineGearShitAudio");
+const carEngineAccelaratingAudio = document.getElementById("carEngineAccelaratingAudio");
 const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
 
 //BUTTONS
