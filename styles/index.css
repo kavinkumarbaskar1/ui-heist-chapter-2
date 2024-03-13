@@ -10,6 +10,8 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* background styles */
+
 .bg-video {
   position: absolute;
   top: -300px;
@@ -18,6 +20,31 @@ body {
   width: 200%;
   object-fit: cover;
   z-index: -99;
+}
+
+.bg-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -98;
+}
+
+.left-overlay {
+  position: absolute;
+  left: 0;
+  clip-path: polygon(0 0, 10% 0, 100% 100%, 0 100%);
+  height: 100%;
+  width: 25%;
+  z-index: -98;
+}
+
+.right-overlay {
+  position: absolute;
+  right: 0;
+  clip-path: polygon(90% 0, 100% 0, 100% 100%, 0 100%);
+  height: 100%;
+  width: 25%;
+  z-index: -98;
 }
 
 /* car styles */
@@ -220,6 +247,7 @@ body {
   right: 9%;
 }
 
+.light-wrapper,
 .brake-wrapper {
   left: 9%;
 }

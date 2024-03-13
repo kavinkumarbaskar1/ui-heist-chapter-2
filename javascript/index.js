@@ -6,6 +6,8 @@ const CITY = "Chennai";
 const startScreen = $(".game-start-content");
 const gameScreen = $(".game-on-content");
 const backgroundVideo = $("#bgVideo");
+const backgroundFullOverlay = $("#bgFullOverlay");
+const backgroundSideOverlay = $("#bgSideOverlay");
 
 //ELEMENTS
 const video = document.getElementById("backCamera");
@@ -17,7 +19,7 @@ const fuelBar = $("#fuelBar");
 const carSteeringWheel = document.getElementById("carSteeringWheel");
 const carEngineStartAudio = document.getElementById("carEngineStartAudio");
 const carEngineRunningAudio = document.getElementById("carEngineRunningAudio");
-const carEngineGearShitAudio = document.getElementById("carEngineGearShitAudio");
+const carEngineGearShiftAudio = document.getElementById("carEngineGearShiftAudio");
 const carEngineAccelaratingAudio = document.getElementById("carEngineAccelaratingAudio");
 const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
 const carHornAudio = document.getElementById("carHornAudio");
@@ -28,6 +30,7 @@ const stopBtn = $("#stopBtn");
 const acceleratorBtn = $("#acceleratorBtn");
 const brakeBtn = $("#brakeBtn");
 const hornBtn = $("#hornBtn");
+const lightBtn = $("#lightBtn");
 const fuelBtn = $("#fuelBtn");
 const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");

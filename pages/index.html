@@ -18,9 +18,16 @@
     <link rel="stylesheet" href="../styles/index.css" />
   </head>
   <body>
+    <!-- START :: road video -->
     <video class="bg-video" id="bgVideo" muted loop>
       <source src="../assets/road-bg.mp4" type="video/mp4" />
     </video>
+    <div class="bg-overlay" id="bgFullOverlay"></div>
+    <div class="d-none" id="bgSideOverlay">
+      <div class="left-overlay"></div>
+      <div class="right-overlay"></div>
+    </div>
+    <!-- END :: road video -->
     <!-- START :: car environment wrapper -->
     <section class="car-environment-wrapper">
       <!-- START :: car background wrapper -->
@@ -84,6 +91,9 @@
             <div class="power-icon-wrapper icon bottom-first-tab game-stop-icon" id="stopBtn">
               <i class="fa-solid fa-power-off medium-icon"></i>
             </div>
+            <div class="light-wrapper icon bottom-first-tab" id="lightBtn">
+              <img src="../assets/beam.png" alt="light" />
+            </div>
             <div class="acceralator-wrapper icon bottom-second-tab" id="acceleratorBtn">
               <img src="../assets/accelerator.png" alt="acceralator" />
             </div>
@@ -119,7 +129,7 @@
     <!-- START :: AUDIO TAGS -->
     <audio id="carEngineStartAudio" src="../sounds/car-start.mp3" preload="auto"></audio>
     <audio id="carEngineRunningAudio" src="../sounds/car-running.mp3" preload="auto" loop></audio>
-    <audio id="carEngineGearShitAudio" src="../sounds/car-gear-shit.mp3" preload="auto"></audio>
+    <audio id="carEngineGearShiftAudio" src="../sounds/car-gear-shift.mp3" preload="auto"></audio>
     <audio id="carEngineAccelaratingAudio" src="../sounds/car-accelarating.mp3" preload="auto" loop></audio>
     <audio id="carEngineBrakeAudio" src="../sounds/car-break.mp3" preload="auto"></audio>
     <audio id="carHornAudio" src="../sounds/car-horn.wav" preload="auto" loop></audio>
@@ -131,8 +141,8 @@
     ></script>
     <script src="../javascript/time.js"></script>
     <script src="../javascript/index.js"></script>
-    <script src="../javascript/rotateSteering.js"></script>
     <script src="../javascript/video.js"></script>
+    <script src="../javascript/rotateSteering.js"></script>
     <script src="../javascript/speed.js"></script>
     <script src="../javascript/temperature.js"></script>
     <script src="../javascript/fuel.js"></script>
