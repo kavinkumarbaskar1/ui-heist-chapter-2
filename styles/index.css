@@ -348,7 +348,7 @@ audio {
 }
 
 .dice {
-  background-image: url("../assets/dice.png");
+  background-image: url("./assets/dice.png");
   background-size: contain;
   background-repeat: no-repeat;
   height: 150px;
