@@ -6,6 +6,8 @@ const CITY = "Chennai";
 const startScreen = $(".game-start-content");
 const gameScreen = $(".game-on-content");
 const backgroundVideo = $("#bgVideo");
+const backgroundFullOverlay = $("#bgFullOverlay");
+const backgroundSideOverlay = $("#bgSideOverlay");
 
 //ELEMENTS
 const video = document.getElementById("backCamera");
@@ -28,6 +30,7 @@ const stopBtn = $("#stopBtn");
 const acceleratorBtn = $("#acceleratorBtn");
 const brakeBtn = $("#brakeBtn");
 const hornBtn = $("#hornBtn");
+const lightBtn = $("#lightBtn");
 const fuelBtn = $("#fuelBtn");
 const leftBtn = $("#leftBtn");
 const rightBtn = $("#rightBtn");
