@@ -27,11 +27,6 @@ const btnActions = {
       carEngineRunningAudio.pause();
     }
   },
-  m: () => {
-    if (isGameOn) {
-      volumeBtn.find("i").toggleClass("d-none");
-    }
-  },
   c: () => {
     isCameraOn = !isCameraOn;
     cameraBtn.toggleClass("active-icon");
@@ -78,6 +73,11 @@ const btnKeyDownActions = {
   r: () => {
     refillFuel();
   },
+  h: () => {
+    if (isGameOn) {
+      carHornAudio.play();
+    }
+  },
   arrowleft: () => {
     clockwiseRotate();
     videoPositionHandler("left");
@@ -104,6 +104,11 @@ const btnKeyUpActions = {
   },
   b: () => {
     carEngineBrakeAudio.currentTime = carEngineBrakeAudio.duration;
+  },
+  h: () => {
+    if (isGameOn) {
+      carHornAudio.pause();
+    }
   },
   arrowleft: () => {
     anticlockwiseRotate();

@@ -274,7 +274,8 @@ body {
   font-size: 18px;
 }
 
-.d-none {
+.d-none,
+audio {
   display: none;
 }
 
