@@ -21,6 +21,12 @@ const carEngineGearShitAudio = document.getElementById("carEngineGearShitAudio")
 const carEngineAccelaratingAudio = document.getElementById("carEngineAccelaratingAudio");
 const carEngineBrakeAudio = document.getElementById("carEngineBrakeAudio");
 const carHornAudio = document.getElementById("carHornAudio");
+const musicIcon = $("#music");
+const song1 = document.getElementById("song1");
+const song2 = document.getElementById("song2");
+const song3 = document.getElementById("song3");
+const song4 = document.getElementById("song4");
+const song5 = document.getElementById("song5");
 
 //BUTTONS
 const startBtn = $("#startBtn");
@@ -61,6 +67,9 @@ let decreaseFn;
 let timerFn;
 let currentAngle = 0;
 let engineStart = false;
+let isMusicIcon = false; 
+let isRadioOn = false;
+let isSongPlayedByButton = false;
 
 /**
  * Function to toggle startscreen and gamescreen
